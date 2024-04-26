@@ -2,6 +2,16 @@ import json
 import requests
 import time
 import traceback
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Accessing the variables
+api_path = os.getenv('QUICKNODE_API_PATH')
+
+
 
 def fetchAllRuntimeInformation(tx_hash):
     maxTimes = 4
@@ -9,7 +19,7 @@ def fetchAllRuntimeInformation(tx_hash):
     while count < maxTimes:
         count += 1
         try:
-            url = 'https://white-flashy-research.quiknode.pro/661a68de75cca81104455a0cb1b244812d574fef/'
+            url = api_path
             myobj = {"method":"trace_replayTransaction","params":[tx_hash,["vmTrace", "trace", "stateDiff"]],"id":1,"jsonrpc":"2.0"}
             x = requests.post(url, json = myobj)
             data = json.loads(x.text)
@@ -26,7 +36,7 @@ def fetchVmTrace(tx_hash):
     while count < maxTimes:
         count += 1
         try:
-            url = 'https://white-flashy-research.quiknode.pro/661a68de75cca81104455a0cb1b244812d574fef/'
+            url = api_path
             myobj = {"method":"trace_replayTransaction","params":[tx_hash,["vmTrace"]],"id":1,"jsonrpc":"2.0"}
             x = requests.post(url, json = myobj)
             data = json.loads(x.text)
@@ -46,7 +56,7 @@ def fetchStateDiff(tx_hash):
     while count < maxTimes:
         count += 1
         try:
-            url = 'https://white-flashy-research.quiknode.pro/661a68de75cca81104455a0cb1b244812d574fef/'
+            url = api_path
             myobj = {"method":"trace_replayTransaction","params":[tx_hash,["stateDiff"]],"id":1,"jsonrpc":"2.0"}
             x = requests.post(url, json = myobj)
             data = json.loads(x.text)
