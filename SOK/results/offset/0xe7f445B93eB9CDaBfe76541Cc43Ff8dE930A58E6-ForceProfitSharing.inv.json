@@ -1,0 +1,322 @@
+[
+    {
+        "func": "approve(spender,amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "approve(spender,amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "decreaseAllowance(spender,subtractedValue)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "decreaseAllowance(spender,subtractedValue)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "deposit(amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(amount > 0)",
+            "VeriSol.Requires(VeriSol.Old(initializing) == false)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(VeriSol.Old(address(force)) == address(0))",
+            "VeriSol.Requires(VeriSol.Old(initialized) == false)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(VeriSol.Old(uint256(_decimals)) == 0)",
+            "VeriSol.Requires(VeriSol.Old(_guardCounter) == 0)"
+        ],
+        "postconditions": [
+            "VeriSol.Ensures(initialized == false)",
+            "VeriSol.Ensures(_decimals == 0)",
+            "VeriSol.Ensures(initializing == false)",
+            "VeriSol.Ensures(force == address(0))",
+            "VeriSol.Ensures(VeriSol.SumMapping(_balances) > 0)",
+            "VeriSol.Ensures(_totalSupply > 0)",
+            "VeriSol.Ensures(_guardCounter == 0)",
+            "VeriSol.Ensures(initialized == VeriSol.Old(initialized))",
+            "VeriSol.Ensures(_decimals == VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals >= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals <= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) <= _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) < _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) != _totalSupply)",
+            "VeriSol.Ensures(initializing == VeriSol.Old(initializing))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) <= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) < VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) != VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(force == VeriSol.Old(address(force)))",
+            "VeriSol.Ensures(_guardCounter == VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter >= VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter <= VeriSol.Old(_guardCounter))"
+        ],
+        "falsified_preconditions": [
+            "VeriSol.Requires(VeriSol.Old(_totalSupply) > 0)",
+            "VeriSol.Requires(VeriSol.Old(VeriSol.SumMapping(_balances)) > 0)"
+        ],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "deposit(amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "increaseAllowance(spender,addedValue)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "increaseAllowance(spender,addedValue)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "initialize(name,symbol,decimals)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "initialize(name,symbol,decimals)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "initialize()",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "initialize()",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "transfer(recipient,amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(amount > 0)",
+            "VeriSol.Requires(VeriSol.Old(_totalSupply) > 0)",
+            "VeriSol.Requires(VeriSol.Old(initializing) == false)",
+            "VeriSol.Requires(VeriSol.Old(VeriSol.SumMapping(_balances)) > 0)",
+            "VeriSol.Requires(recipient != address(0))",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(VeriSol.Old(address(force)) == address(0))",
+            "VeriSol.Requires(VeriSol.Old(initialized) == false)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(VeriSol.Old(uint256(_decimals)) == 0)",
+            "VeriSol.Requires(VeriSol.Old(_guardCounter) == 0)"
+        ],
+        "postconditions": [
+            "VeriSol.Ensures(initialized == false)",
+            "VeriSol.Ensures(_decimals == 0)",
+            "VeriSol.Ensures(initializing == false)",
+            "VeriSol.Ensures(force == address(0))",
+            "VeriSol.Ensures(VeriSol.SumMapping(_balances) > 0)",
+            "VeriSol.Ensures(_totalSupply > 0)",
+            "VeriSol.Ensures(_guardCounter == 0)",
+            "VeriSol.Ensures(initialized == VeriSol.Old(initialized))",
+            "VeriSol.Ensures(_decimals == VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals >= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals <= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) == _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) >= _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) <= _totalSupply)",
+            "VeriSol.Ensures(initializing == VeriSol.Old(initializing))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) >= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(force == VeriSol.Old(address(force)))",
+            "VeriSol.Ensures(_guardCounter == VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter >= VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter <= VeriSol.Old(_guardCounter))"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": [
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) == VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) > VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) <= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) != VeriSol.SumMapping(_balances))"
+        ]
+    },
+    {
+        "func": "transfer(recipient,amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "transferFrom(sender,recipient,amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "transferFrom(sender,recipient,amount)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "withdraw(numberOfShares)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(numberOfShares > 0)",
+            "VeriSol.Requires(VeriSol.Old(_totalSupply) > 0)",
+            "VeriSol.Requires(VeriSol.Old(initializing) == false)",
+            "VeriSol.Requires(VeriSol.Old(VeriSol.SumMapping(_balances)) > 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(VeriSol.Old(address(force)) == address(0))",
+            "VeriSol.Requires(VeriSol.Old(initialized) == false)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(VeriSol.Old(uint256(_decimals)) == 0)",
+            "VeriSol.Requires(VeriSol.Old(_guardCounter) == 0)"
+        ],
+        "postconditions": [
+            "VeriSol.Ensures(initialized == false)",
+            "VeriSol.Ensures(_decimals == 0)",
+            "VeriSol.Ensures(initializing == false)",
+            "VeriSol.Ensures(force == address(0))",
+            "VeriSol.Ensures(_guardCounter == 0)",
+            "VeriSol.Ensures(initialized == VeriSol.Old(initialized))",
+            "VeriSol.Ensures(_decimals == VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals >= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals <= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) >= _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) > _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) != _totalSupply)",
+            "VeriSol.Ensures(initializing == VeriSol.Old(initializing))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) >= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(force == VeriSol.Old(address(force)))",
+            "VeriSol.Ensures(_guardCounter == VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter >= VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter <= VeriSol.Old(_guardCounter))"
+        ],
+        "falsified_preconditions": [],
+        "falsified_postconditions": [
+            "VeriSol.Ensures(VeriSol.SumMapping(_balances) > 0)",
+            "VeriSol.Ensures(_totalSupply > 0)",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) == VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) > VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) <= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) != VeriSol.SumMapping(_balances))"
+        ]
+    },
+    {
+        "func": "withdraw(numberOfShares)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": null,
+        "type": "PptType.CONTRACT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(VeriSol.Old(initializing) == false)",
+            "VeriSol.Requires(VeriSol.Old(address(force)) == address(0))",
+            "VeriSol.Requires(VeriSol.Old(initialized) == false)",
+            "VeriSol.Requires(VeriSol.Old(uint256(_decimals)) == 0)",
+            "VeriSol.Requires(VeriSol.Old(_guardCounter) == 0)"
+        ],
+        "postconditions": [
+            "VeriSol.Ensures(initialized == false)",
+            "VeriSol.Ensures(_decimals == 0)",
+            "VeriSol.Ensures(initializing == false)",
+            "VeriSol.Ensures(force == address(0))",
+            "VeriSol.Ensures(_guardCounter == 0)",
+            "VeriSol.Ensures(initialized == VeriSol.Old(initialized))",
+            "VeriSol.Ensures(_decimals == VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals >= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(_decimals <= VeriSol.Old(uint256(_decimals)))",
+            "VeriSol.Ensures(initializing == VeriSol.Old(initializing))",
+            "VeriSol.Ensures(force == VeriSol.Old(address(force)))",
+            "VeriSol.Ensures(_guardCounter == VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter >= VeriSol.Old(_guardCounter))",
+            "VeriSol.Ensures(_guardCounter <= VeriSol.Old(_guardCounter))"
+        ],
+        "falsified_preconditions": [
+            "VeriSol.Requires(VeriSol.Old(_totalSupply) > 0)",
+            "VeriSol.Requires(VeriSol.Old(VeriSol.SumMapping(_balances)) > 0)"
+        ],
+        "falsified_postconditions": [
+            "VeriSol.Ensures(VeriSol.SumMapping(_balances) > 0)",
+            "VeriSol.Ensures(_totalSupply > 0)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) == _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) >= _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) > _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) <= _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) < _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(_totalSupply) != _totalSupply)",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) == VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) >= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) > VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) <= VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) < VeriSol.SumMapping(_balances))",
+            "VeriSol.Ensures(VeriSol.Old(VeriSol.SumMapping(_balances)) != VeriSol.SumMapping(_balances))"
+        ]
+    }
+]
