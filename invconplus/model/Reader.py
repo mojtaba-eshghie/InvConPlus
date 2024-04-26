@@ -8,11 +8,12 @@ class Reader:
     contractName: str 
     storageLayout: Dict 
     abi: List 
+    offset:bool
     transactions: List
     txCursor: int 
-    def __init__(self, contract_address, maxCount) -> None:
+    def __init__(self, contract_address, maxCount, offset) -> None:
         self.contract_address = contract_address 
-        bdProvider = BlockchainDataProvider(params = dict(contract_address=contract_address), maxCount=maxCount)
+        bdProvider = BlockchainDataProvider(params = dict(contract_address=contract_address), maxCount=maxCount, offset=offset)
         self.contractName, self.storageLayout, self.abi, self.constants, self.transactions = bdProvider.read()
         self.txCursor = 0 
 

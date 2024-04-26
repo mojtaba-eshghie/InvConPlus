@@ -9,14 +9,12 @@ from invconplus.trace.traceslice import TraceSlice, Trace, covertTx2Event, defau
 from invconplus.const import RESULT_DIR 
 import time 
 
-def main(address, configuration=None, maxCount=500, minSupport=50):
-    logging.warning(address)
+def main(address, configuration=None, maxCount=1, minSupport=1, offset = False):
     statistics = dict()
     start_time = time.time()
-    txreplayer = TransactionReplayer(contract_address=address, maxCount=maxCount)
+    txreplayer = TransactionReplayer(contract_address=address, maxCount=maxCount, offset= offset)
     invcon = InvConPlus(address, txreplayer.contractName, txreplayer.getDeclModel(), txreplayer.getABISpec())
     invcon.initializePpts()
-
     statistics["initializePpts"] = time.time() - start_time 
     statistics["readTx"] = list()
     statistics["processData"] = list()
@@ -95,17 +93,22 @@ if __name__ == "__main__":
     parser.add_argument('--output_dir', type=str, required=False, default=None, 
                         help='directory where the invariant results will be stored')
     
-    parser.add_argument('--maxCount', type=int, required=False, default=500, 
+    parser.add_argument('--maxCount', type=int, required=False, default=400, 
                         help='the number of transactions used,\
                               (default, 500)')
     
-    parser.add_argument('--minSupport', type=int, required=False, default=50, 
+    parser.add_argument('--minSupport', type=int, required=False, default=10, 
                         help='the number of minimum transactions used,\
-                              (default, 50)')
+                              (default, 50)') 
+    
+    parser.add_argument('--offset', type=int, required=False, default=False, 
+                        help='This sets if an offset should be calculated to capture the last transaction,\
+                              (default, False)') 
+    
     
     args = parser.parse_args()
     if args.output_dir is not None:
         RESULT_DIR = args.output_dir
 
-    main(args.address, args.configuration, args.maxCount, args.minSupport)
+    main(args.address, args.configuration, args.maxCount, args.minSupport, args.offset)
     

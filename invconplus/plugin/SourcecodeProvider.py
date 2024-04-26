@@ -16,13 +16,15 @@ class SourcecodeProvider(Provider):
     # @input, read a contract blockchain address
     # @output, crawl contract source code and translate it into corresponding storage layout
     def read(self) -> Any:
-        logging.debug(self.params[CONTRACT_ADDRESS])
+
+        logging.warning(self.params[CONTRACT_ADDRESS])
+
         mainContract, storageLayout, abi = self.crawl()
         return mainContract, storageLayout, abi, self.extractConstants() 
         
     def crawl(self):
         try:
-            slither = Slither(target="mainet:{0}".format(self.params[CONTRACT_ADDRESS]), export_dir = "./crytic-export", etherscan_api_key="SDI5QEC2UAY1CX4C1VPXC4WE9HIMH2SF1C")
+            slither = Slither(target="mainet:{0}".format(self.params[CONTRACT_ADDRESS]), export_dir = "./crytic-export", etherscan_api_key="VGHRZQP8II762UY7D3MTNZCA1U5FSRUYW1")
             # print(slither._crytic_compile.filenames)
             if len(slither._crytic_compile.filenames) == 1:
                 mainContract = list(slither._crytic_compile.filenames)[0].relative.split(".etherscan.io-")[1].split(".sol")[0]

@@ -1,0 +1,506 @@
+[
+    {
+        "func": "addLiquidity(tokenA,tokenB,amountADesired,amountBDesired,amountAMin,amountBMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(amountAMin > 0)",
+            "VeriSol.Requires(amountAMin == 427737432280388668)",
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(deadline == 1591399219)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(amountADesired > 0)",
+            "VeriSol.Requires(amountADesired == 429886866613455948)",
+            "VeriSol.Requires(tokenB != address(0))",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(amountBDesired > 0)",
+            "VeriSol.Requires(amountBDesired == 725676023)",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountBMin > 0)",
+            "VeriSol.Requires(amountBMin == 722047642)",
+            "VeriSol.Requires(tokenA != address(0))",
+            "VeriSol.Requires(amountAMin <= amountADesired)",
+            "VeriSol.Requires(amountAMin < amountADesired)",
+            "VeriSol.Requires(amountAMin != amountADesired)",
+            "VeriSol.Requires(amountBDesired >= amountBMin)",
+            "VeriSol.Requires(amountBDesired > amountBMin)",
+            "VeriSol.Requires(amountBDesired != amountBMin)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "addLiquidity(tokenA,tokenB,amountADesired,amountBDesired,amountAMin,amountBMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "addLiquidityETH(token,amountTokenDesired,amountTokenMin,amountETHMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value > 0)",
+            "VeriSol.Requires(amountETHMin > 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountTokenDesired > 0)",
+            "VeriSol.Requires(amountTokenMin > 0)",
+            "VeriSol.Requires(token != address(0))",
+            "VeriSol.Requires(msg.value >= amountETHMin)",
+            "VeriSol.Requires(msg.value > amountETHMin)",
+            "VeriSol.Requires(msg.value != amountETHMin)",
+            "VeriSol.Requires(amountTokenDesired >= amountTokenMin)",
+            "VeriSol.Requires(amountTokenDesired > amountTokenMin)",
+            "VeriSol.Requires(amountTokenDesired != amountTokenMin)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "addLiquidityETH(token,amountTokenDesired,amountTokenMin,amountETHMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "getAmountIn(amountOut,reserveIn,reserveOut)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "getAmountIn(amountOut,reserveIn,reserveOut)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "getAmountOut(amountIn,reserveIn,reserveOut)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "getAmountOut(amountIn,reserveIn,reserveOut)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "quote(amountA,reserveA,reserveB)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "quote(amountA,reserveA,reserveB)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidity(tokenA,tokenB,liquidity,amountAMin,amountBMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidity(tokenA,tokenB,liquidity,amountAMin,amountBMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETH(token,liquidity,amountTokenMin,amountETHMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETH(token,liquidity,amountTokenMin,amountETHMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETHSupportingFeeOnTransferTokens(token,liquidity,amountTokenMin,amountETHMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETHSupportingFeeOnTransferTokens(token,liquidity,amountTokenMin,amountETHMin,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETHWithPermit(token,liquidity,amountTokenMin,amountETHMin,to,deadline,approveMax,v,r,s)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(deadline == 1591399837)",
+            "VeriSol.Requires(liquidity > 0)",
+            "VeriSol.Requires(liquidity == 718894994604153977)",
+            "VeriSol.Requires(s != '')",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(approveMax == false)",
+            "VeriSol.Requires(amountETHMin > 0)",
+            "VeriSol.Requires(amountETHMin == 45254257259314028)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(r != '')",
+            "VeriSol.Requires(amountTokenMin > 0)",
+            "VeriSol.Requires(amountTokenMin == 14077957680201544079)",
+            "VeriSol.Requires(v > 0)",
+            "VeriSol.Requires(v == 27)",
+            "VeriSol.Requires(token != address(0))"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETHWithPermit(token,liquidity,amountTokenMin,amountETHMin,to,deadline,approveMax,v,r,s)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(token,liquidity,amountTokenMin,amountETHMin,to,deadline,approveMax,v,r,s)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(deadline == 1591399138)",
+            "VeriSol.Requires(liquidity > 0)",
+            "VeriSol.Requires(liquidity == 6247422960898302383)",
+            "VeriSol.Requires(s != '')",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(approveMax == false)",
+            "VeriSol.Requires(amountETHMin > 0)",
+            "VeriSol.Requires(amountETHMin == 148384454815849053)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(r != '')",
+            "VeriSol.Requires(amountTokenMin > 0)",
+            "VeriSol.Requires(amountTokenMin == 324198787894677739935)",
+            "VeriSol.Requires(v > 0)",
+            "VeriSol.Requires(v == 28)",
+            "VeriSol.Requires(token != address(0))"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(token,liquidity,amountTokenMin,amountETHMin,to,deadline,approveMax,v,r,s)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityWithPermit(tokenA,tokenB,liquidity,amountAMin,amountBMin,to,deadline,approveMax,v,r,s)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "removeLiquidityWithPermit(tokenA,tokenB,liquidity,amountAMin,amountBMin,to,deadline,approveMax,v,r,s)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapETHForExactTokens(amountOut,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value > 0)",
+            "VeriSol.Requires(amountOut > 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapETHForExactTokens(amountOut,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(deadline == 1591399458)",
+            "VeriSol.Requires(msg.value > 0)",
+            "VeriSol.Requires(msg.value == 681133892841769825)",
+            "VeriSol.Requires(amountOut > 0)",
+            "VeriSol.Requires(amountOut == 1000)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactETHForTokens(amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value > 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountOutMin > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactETHForTokens(amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value > 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountOutMin > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactETHForTokensSupportingFeeOnTransferTokens(amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactETHForTokensSupportingFeeOnTransferTokens(amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForETH(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountOutMin > 0)",
+            "VeriSol.Requires(amountIn > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForETH(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountOutMin > 0)",
+            "VeriSol.Requires(amountIn > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForETHSupportingFeeOnTransferTokens(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountOutMin > 0)",
+            "VeriSol.Requires(amountIn > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForETHSupportingFeeOnTransferTokens(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForTokens(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountOutMin > 0)",
+            "VeriSol.Requires(amountIn > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForTokens(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForTokensSupportingFeeOnTransferTokens(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapExactTokensForTokensSupportingFeeOnTransferTokens(amountIn,amountOutMin,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapTokensForExactETH(amountOut,amountInMax,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [
+            "VeriSol.Requires(deadline > 0)",
+            "VeriSol.Requires(msg.value == 0)",
+            "VeriSol.Requires(amountOut > 0)",
+            "VeriSol.Requires(msg.sender != address(0))",
+            "VeriSol.Requires(to != address(0))",
+            "VeriSol.Requires(amountInMax > 0)"
+        ],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapTokensForExactETH(amountOut,amountInMax,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapTokensForExactTokens(amountOut,amountInMax,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": "swapTokensForExactTokens(amountOut,amountInMax,path,to,deadline)",
+        "type": "PptType.EXIT",
+        "executionType": "TxType.REVERSION",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    },
+    {
+        "func": null,
+        "type": "PptType.CONTRACT",
+        "executionType": "TxType.NORMAL",
+        "preconditions": [],
+        "postconditions": [],
+        "falsified_preconditions": [],
+        "falsified_postconditions": []
+    }
+]

@@ -1,10 +1,9 @@
-
-# INVARIANT_STYLE = "VERISOL"
-INVARIANT_STYLE = "DAIKON"
+INVARIANT_STYLE = "VERISOL"
+#INVARIANT_STYLE = "DAIKON"
 # RESULT_DIR = "./ASE-result"
 
-RESULT_DIR = "./Token-data/result-erc721"
-# RESULT_DIR = "./Trace2Inv/result"
+# RESULT_DIR = "./Token-data/result-erc721"
+RESULT_DIR = "./SOK/result"
 ENABLE_CACHE = True
 # ENABLE_CACHE = False
 
@@ -15,6 +14,6 @@ ALLOW_FASIFY_INV = True
 DISABLE_IMPLICATION_INV = True
 
 # OPTION FOR Invariant Reduction with Dependency-based Pruning
-ENABLE_INV_REDUCTION = False
+ENABLE_INV_REDUCTION = True
 
 ENABLE_READ_MODEL_FLATTENVALUE = True

@@ -12,11 +12,17 @@ from invconplus.const import ENABLE_CACHE
 
 CONTRACT_ADDRESS = "contract_address"
 class BlockchainDataProvider(Provider):
-    def __init__(self, params: Dict, maxCount) -> None:
+    def __init__(self, params: Dict, maxCount, offset) -> None:
         super().__init__(params)
         self.maxCount = maxCount
+        self.offset = offset
     
     def _read(self, export_file):
+        
+        print("This is the export file" ,export_file)
+        print("This is the path" , os.path.abspath(os.getcwd()))
+
+        print(os.path.exists(export_file))
         if os.path.exists(export_file) and ENABLE_CACHE:
             result = json.load(open(export_file))
             transactions = result["transactions"]
@@ -71,9 +77,9 @@ class BlockchainDataProvider(Provider):
             assert contractName is not None and storageLayout is not None and abi is not None 
             
             txProvider = TransactionProvider(self.params, self.maxCount)
+
             transactions = txProvider.read()
             cached_record_number = len(transactions)
-
             logging.warning("fetching state diff for {0} transactions".format(len(transactions)))
             with alive_bar(len(transactions)) as bar:
                 for transaction in copy.copy(transactions):
@@ -100,7 +106,6 @@ class BlockchainDataProvider(Provider):
     def read(self, export_dir = "./tmp/"):
         logging.debug(self.params[CONTRACT_ADDRESS])
         export_file = os.path.join(export_dir, self.params[CONTRACT_ADDRESS] +".json")
-
         return self._read(export_file=export_file)
     
 if __name__ == "__main__":

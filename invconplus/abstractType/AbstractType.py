@@ -59,7 +59,7 @@ def rename(address_or_workdir, missing_files: List[str]):
             print(code)
 
 def compileContract(address):
-    cc = CryticCompile(target="mainet:{0}".format(address), etherscan_api_key="SDI5QEC2UAY1CX4C1VPXC4WE9HIMH2SF1C")
+    cc = CryticCompile(target="mainet:{0}".format(address), etherscan_api_key="VGHRZQP8II762UY7D3MTNZCA1U5FSRUYW1")
     slither = Slither(cc)
     if len(slither._crytic_compile.filenames) == 1:
         mainContract = list(slither._crytic_compile.filenames)[0].relative.split(".etherscan.io-")[1].split(".sol")[0]
@@ -141,8 +141,10 @@ class MyContract:
             if isinstance(exp, AssignmentOperation):
                 left: Expression  = exp.expression_left
                 right: Expression  = exp.expression_right
+             
                 leftVarInfo = exploreEx(left)
                 rightVarInfo = exploreEx(right)
+
                 if isinstance(leftVarInfo, VarInfo) and isinstance(rightVarInfo, VarInfo):
                     if leftVarInfo.isStateVar() and not rightVarInfo.isTxVar():
                         funcDep.addDependency(rightVarInfo, leftVarInfo)
@@ -174,13 +176,13 @@ class MyContract:
                     else:
                         if isinstance(baseVar, dict) or isinstance(indexVar, dict):
                             logging.error("baseVar or indexVar is dict")
-                            if "callee" in indexVar and indexVar["callee"] == "_msgSender":
+                            if "callee" in indexVar and indexVar["callee"] == "_msgSender": 
                                 if isinstance(baseVar, VarInfo):
-                                    return VarInfo(name=baseVar.name+"[msg.sender]", type = exp.type, vartype= baseVar.vartype, derivation=MappingItem([baseVar, VarInfo(name = "msg.sender", type= "address", vartype= VarType.TXVAR, derivation=None )], ppt_slice=None))
+                                    return VarInfo(name=baseVar.name+"[msg.sender]", type = baseVar.type, vartype= baseVar.vartype, derivation=MappingItem([baseVar, VarInfo(name = "msg.sender", type= "address", vartype= VarType.TXVAR, derivation=None )], ppt_slice=None))
                             else:
                                 return None 
                         elif isinstance(baseVar, VarInfo) and isinstance(indexVar, VarInfo):
-                            return VarInfo(name=baseVar.name+"["+indexVar.name+"]", type = exp.type, vartype= baseVar.vartype, derivation=MappingItem([baseVar, indexVar], ppt_slice=None))
+                            return VarInfo(name=baseVar.name+"["+indexVar.name+"]", type = baseVar.type, vartype= baseVar.vartype, derivation=MappingItem([baseVar, indexVar], ppt_slice=None))
                         else:
                             return None
                 elif ArrayItem.valid_vars([baseVar, indexVar]):
@@ -189,11 +191,12 @@ class MyContract:
                         # return VarInfo(name=baseVar.name+"["+indexVar+"]", type = exp.type, vartype= baseVar.vartype, derivation=None)
                     else:
                         if isinstance(baseVar, VarInfo) or isinstance(indexVar, VarInfo):
-                            return VarInfo(name=baseVar.name+"["+indexVar.name+"]", type = exp.type, vartype= baseVar.vartype, derivation=ArrayItem([baseVar, indexVar], ppt_slice=None))
+
+                            return VarInfo(name=baseVar.name+"["+indexVar.name+"]", type = baseVar.type, vartype= baseVar.vartype, derivation=ArrayItem([baseVar, indexVar], ppt_slice=None))
                         else:
                             return None 
                 elif isinstance(indexVar, VarInfo) and isinstance(baseVar, VarInfo):
-                    return VarInfo(name=baseVar.name+"["+indexVar.name+"]", type = exp.type, vartype= baseVar.vartype, derivation=MappingItem([baseVar, indexVar], ppt_slice=None))
+                    return VarInfo(name=baseVar.name+"["+indexVar.name+"]", type = baseVar.type, vartype= baseVar.vartype, derivation=MappingItem([baseVar, indexVar], ppt_slice=None))
                 else:
                     return None 
                    
@@ -205,9 +208,9 @@ class MyContract:
                 if structVar is None:
                     return None
                 elif isinstance(structVar, EnumContract):
-                    return VarInfo(name=structVar.name+"."+member, type = exp.type, vartype= VarType.ENUM, derivation=None)
+                    return VarInfo(name=structVar.name+"."+member, type = "" , vartype= VarType.ENUM, derivation=None)
                 elif member != "length" and StructMember.valid_vars([structVar]):
-                    return VarInfo(name=structVar.name+"."+member, type = exp.type, vartype= structVar.vartype, derivation=StructMember([structVar], ppt_slice=None))
+                    return VarInfo(name=structVar.name+"."+member, type = "", vartype= structVar.vartype, derivation=StructMember([structVar], ppt_slice=None))
                 # elif member == "length":
                 #     return VarInfo(name=structVar.name+"."+member, type = exp.type, vartype= structVar.vartype, derivation=SeqSize(ArrayWildcard([structVar], ppt_slice=None).derive()[0], ppt_slice=None))
                 else:

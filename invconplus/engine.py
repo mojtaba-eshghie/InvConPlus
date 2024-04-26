@@ -141,10 +141,10 @@ class InvConPlus:
                                     results.append(inv)
                     else: 
                         results = _results  
-                    logging.warning("\n")
-                    logging.warning(ppt.func)
-                    logging.warning(ppt.type)
-                    logging.warning(ppt.executionType)
+                    # logging.warning("\n")
+                    # logging.warning(ppt.func)
+                    # logging.warning(ppt.type)
+                    # logging.warning(ppt.executionType)
                     logging.warning("\n".join([ inv.__str__() for inv in results if inv.verified and not inv.falsify and inv.__str__()!="" ])) 
                     posts = list() 
                     pres = list() 

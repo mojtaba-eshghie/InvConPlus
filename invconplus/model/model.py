@@ -615,6 +615,8 @@ def createDataModel(storagemodel: dict) -> DataModel:
     vars = storagemodel.get("storage")
     types_desc = storagemodel.get("types")
     variableModels = list()
+
+    
     for variable in vars:
         variableModel = createVariableModel(variable, types_desc)
         variableModels.append(variableModel)

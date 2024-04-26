@@ -17,17 +17,18 @@ start = 0
 count = 0
 time_start =  time.time()
 for row in myreader:
-    if row[0] == "address":
-        continue
-    count += 1
-    if count < start:
-        continue
-    print(count, row)
-    if count >= LIMIT:
-        break
-    try:
-        mineInvariant(row[0])
-        print(row[0], str(time.time() - time_start) + " seconds")
-    except:
-        print("Invariant mining error")
-   
+    if(count < 1):
+        if row[0] == "address":
+            continue
+        count += 1
+        if count < start:
+            continue
+        print(count, row)
+        if count >= LIMIT:
+            break
+        try:
+            mineInvariant(row[0])
+            print(row[0], str(time.time() - time_start) + " seconds")
+        except:
+            print("Invariant mining error")
+    

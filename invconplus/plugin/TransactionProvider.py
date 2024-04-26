@@ -7,9 +7,10 @@ USDT_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7"
 CONTRACT_ADDRESS="contract_address"
 
 class TransactionProvider(Provider):
-    def __init__(self, params, maxCount=None, cached_record_number = 0) -> None:
+    def __init__(self, params, maxCount=None, cached_record_number = 0, offset = False) -> None:
         super().__init__(params=params)
         self.maxCount = maxCount
+        self.offset = offset
         self.cached_record_number = cached_record_number
 
     # @result, a list of transactions

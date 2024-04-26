@@ -96,7 +96,7 @@ def testZ3():
     x = z3.Int("x")
     y = z3.Int("y")
     result = z3.solve(x>=y, x<y)
-    print(type(result), result)
+    print( type(result), result)
     solver = z3.Solver()
     solver.add(x>y)
     solver.add(x<y)

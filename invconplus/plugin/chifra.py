@@ -76,15 +76,24 @@ def fetchTransaction(block, txid):
 
     return result["data"]
 
-def fetchTransactionsForAccount(address, maxCount=10000, cached_record_number=0):
+def fetchTransactionsForAccountEnd(address, maxCount=10000, cached_record_number=0):
     global sys 
     transactions = list()
-    p = subprocess.Popen(["chifra", "list", address, "--fmt", "json", "-c", str(cached_record_number+1), "-e", str(maxCount)], stdout=subprocess.PIPE)
+
+    number_of_transactions = fetchTransactionsCountForAccount(address=address, maxCount=100000, cached_record_number=0)
+   
+   
+
+
+    p = subprocess.Popen(["chifra", "list", address, "--fmt", "json", "-c", str(number_of_transactions - maxCount+1), "-e", str(maxCount)], stdout=subprocess.PIPE)
     out, err = p.communicate()
+    logging.warning(out)
     if err:
         logging.error(err)
         assert False
+
     result =  json.loads(out.decode())
+
     batch_size = 25
     result = list(result["data"])
     logging.warning(address + " has transactions no less than "+ str(len(result)+cached_record_number))
@@ -112,6 +121,36 @@ def fetchTransactionsCountForAccount(address, maxCount=100000, cached_record_num
         logging.warning(address + " has transactions number "+ str(len(result)))
     else:
         logging.warning(address + " has more than transactions number "+ str(len(result)))
+
+    return len(result)
+
+
+
+def fetchTransactionsForAccount(address, maxCount=10000, cached_record_number=0):
+    global sys 
+    transactions = list()
+    p = subprocess.Popen(["chifra", "list", address, "--fmt", "json", "-c", str(cached_record_number+1), "-e", str(maxCount)], stdout=subprocess.PIPE)
+    out, err = p.communicate()
+    logging.warning(out)
+    if err:
+        logging.error(err)
+        assert False
+
+    result =  json.loads(out.decode())
+
+    batch_size = 25
+    result = list(result["data"])
+    logging.warning(address + " has transactions no less than "+ str(len(result)+cached_record_number))
+    logging.warning("size of transactions to analyze:"+str(min(maxCount, len(result))))
+    with alive_bar(math.ceil(min(maxCount, len(result))/batch_size)) as bar:
+        for i in range(0, min(maxCount, len(result)), batch_size):
+            tx_ids = list()
+            for tx in result[i:i+batch_size]:
+                tx_ids.append(str(tx["blockNumber"])+"."+str(tx["transactionIndex"]))
+            transactions.extend(fetchBatchTransaction(tx_ids=tx_ids))
+            bar()
+    return transactions 
+
    
 
 def test():

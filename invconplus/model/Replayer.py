@@ -13,11 +13,12 @@ Tx = str
 class TransactionReplayer:
     contract_address: str 
     contractName: str 
-    myreader: Reader 
+    myreader: Reader
+    offset: bool 
     modelReader: StorageModelReader
-    def __init__(self, contract_address, maxCount) -> None:
+    def __init__(self, contract_address, maxCount, offset) -> None:
         self.contract_address = contract_address.lower()
-        self.myreader = Reader(contract_address=contract_address, maxCount=maxCount)
+        self.myreader = Reader(contract_address=contract_address, maxCount=maxCount, offset=offset)
         self.modelReader = StorageModelReader(self.myreader.storageLayout)
         self.contractName =  self.myreader.contractName 
       

@@ -1,0 +1,709 @@
+{
+    "contractName": "TokenMintERC20MintableToken",
+    "storageLayout": {
+        "storage": [
+            {
+                "astId": 0,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_balances",
+                "offset": 0,
+                "slot": "0",
+                "type": "mapping(address => uint256)"
+            },
+            {
+                "astId": 1,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_allowances",
+                "offset": 0,
+                "slot": "1",
+                "type": "mapping(address => mapping(address => uint256))"
+            },
+            {
+                "astId": 2,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_totalSupply",
+                "offset": 0,
+                "slot": "2",
+                "type": "uint256"
+            },
+            {
+                "astId": 3,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "Account",
+                "offset": 0,
+                "slot": "3",
+                "type": "address"
+            },
+            {
+                "astId": 4,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_minters",
+                "offset": 0,
+                "slot": "4",
+                "type": "Roles.Role"
+            },
+            {
+                "astId": 5,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_name",
+                "offset": 0,
+                "slot": "5",
+                "type": "string"
+            },
+            {
+                "astId": 6,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_symbol",
+                "offset": 0,
+                "slot": "6",
+                "type": "string"
+            },
+            {
+                "astId": 7,
+                "contract": "TokenMintERC20MintableToken",
+                "label": "_decimals",
+                "offset": 0,
+                "slot": "7",
+                "type": "uint8"
+            }
+        ],
+        "types": {
+            "mapping(address => uint256)": {
+                "encoding": "mapping",
+                "key": "address",
+                "label": "mapping(address => uint256)",
+                "numberOfBytes": "32",
+                "value": "uint256"
+            },
+            "address": {
+                "encoding": "inplace",
+                "label": "address",
+                "numberOfBytes": "20"
+            },
+            "uint256": {
+                "encoding": "inplace",
+                "label": "uint256",
+                "numberOfBytes": "32"
+            },
+            "mapping(address => mapping(address => uint256))": {
+                "encoding": "mapping",
+                "key": "address",
+                "label": "mapping(address => mapping(address => uint256))",
+                "numberOfBytes": "32",
+                "value": "mapping(address => uint256)"
+            },
+            "mapping(address => bool)": {
+                "encoding": "mapping",
+                "key": "address",
+                "label": "mapping(address => bool)",
+                "numberOfBytes": "32",
+                "value": "bool"
+            },
+            "bool": {
+                "encoding": "inplace",
+                "label": "bool",
+                "numberOfBytes": "1"
+            },
+            "Roles.Role": {
+                "encoding": "inplace",
+                "label": "Roles.Role",
+                "members": [
+                    {
+                        "astId": 0,
+                        "contract": "TokenMintERC20MintableToken",
+                        "label": "bearer",
+                        "offset": 0,
+                        "slot": 0,
+                        "type": "mapping(address => bool)"
+                    }
+                ],
+                "numberOfBytes": 32
+            },
+            "string": {
+                "encoding": "bytes",
+                "label": "string",
+                "numberOfBytes": "32"
+            },
+            "uint8": {
+                "encoding": "inplace",
+                "label": "uint8",
+                "numberOfBytes": "1"
+            }
+        }
+    },
+    "abi": [
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "name",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "approve",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "totalSupply",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transferFrom",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "decimals",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "name": "addedValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "increaseAllowance",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "mint",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "burn",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "balanceOf",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "symbol",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "addMinter",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "renounceMinter",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "name": "subtractedValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "decreaseAllowance",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transfer",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "isMinter",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "newMinter",
+                    "type": "address"
+                }
+            ],
+            "name": "transferMinterRole",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "spender",
+                    "type": "address"
+                }
+            ],
+            "name": "allowance",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "name": "decimals",
+                    "type": "uint8"
+                },
+                {
+                    "name": "initialSupply",
+                    "type": "uint256"
+                },
+                {
+                    "name": "feeReceiver",
+                    "type": "address"
+                },
+                {
+                    "name": "tokenOwnerAddress",
+                    "type": "address"
+                }
+            ],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "MinterAdded",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "MinterRemoved",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Approval",
+            "type": "event"
+        }
+    ],
+    "constants": [],
+    "cached_record_number": 2,
+    "transactions": [
+        [
+            {
+                "action": {
+                    "callType": "call",
+                    "from": "0x96e5490e437cc780753a4f8e335763b5083ac5d3",
+                    "gas": 55493,
+                    "input": "0xa9059cbb000000000000000000000000db4001f896a52d3f13f7a40bff1f90dab4080d5100000000000000000000000000000000000000000000000000000002540be400",
+                    "to": "0x48cbfa92fbbf2255b0db96cdd978c02b9b47fdf4",
+                    "value": "0"
+                },
+                "articulatedTrace": {
+                    "inputs": {
+                        "to": "0x24bd4fe977ed64a21a159404a7091ed9ca5a02ba",
+                        "value": "100000000"
+                    },
+                    "name": "transfer"
+                },
+                "blockHash": "0x5a0112f4254709fd0a7eca073f69245e9b917f54d868a05c9227c0e5f818a987",
+                "blockNumber": 11677895,
+                "date": "2021-01-18 07:25:45 UTC",
+                "result": {
+                    "gasUsed": 29793,
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000001"
+                },
+                "subtraces": 0,
+                "timestamp": 1610954745,
+                "traceAddress": [],
+                "transactionHash": "0x15c5a1b89d6717a11196970be58195d1383d31a8623c9ef14f032bb87b6f6541",
+                "transactionIndex": 28,
+                "type": "call",
+                "stateDiff": {
+                    "0x48cbfa92fbbf2255b0db96cdd978c02b9b47fdf4": {
+                        "balance": "=",
+                        "code": "=",
+                        "nonce": "=",
+                        "storage": {
+                            "0x9b50d96214a6a8cf6aab8af7a12ac24f3f93ec545a5507b006f3a6b78498414e": {
+                                "*": {
+                                    "from": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                    "to": "0x00000000000000000000000000000000000000000000000000000002540be400"
+                                }
+                            },
+                            "0xd549d8e8cd85e12fc77cd48f2be0597fea7c03d724ffa36802e4413a4cf6a3c8": {
+                                "*": {
+                                    "from": "0x00000000000000000000000000000000000000000000000000000030e4f9b400",
+                                    "to": "0x0000000000000000000000000000000000000000000000000000002e90edd000"
+                                }
+                            }
+                        }
+                    },
+                    "0x96e5490e437cc780753a4f8e335763b5083ac5d3": {
+                        "balance": {
+                            "*": {
+                                "from": "0x340ffce44730400",
+                                "to": "0x334f260399b5000"
+                            }
+                        },
+                        "code": "=",
+                        "nonce": {
+                            "*": {
+                                "from": "0xa",
+                                "to": "0xb"
+                            }
+                        },
+                        "storage": {}
+                    },
+                    "0xb3b7874f13387d44a3398d298b075b7a3505d8d4": {
+                        "balance": {
+                            "*": {
+                                "from": "0x1b7f6dfebacd914e2d9",
+                                "to": "0x1b7f6ebf91ae3ec96d9"
+                            }
+                        },
+                        "code": "=",
+                        "nonce": "=",
+                        "storage": {}
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "action": {
+                    "callType": "call",
+                    "from": "0x96e5490e437cc780753a4f8e335763b5083ac5d3",
+                    "gas": 58404,
+                    "input": "0xa9059cbb00000000000000000000000024bd4fe977ed64a21a159404a7091ed9ca5a02ba0000000000000000000000000000000000000000000000000000000005f5e100",
+                    "to": "0x48cbfa92fbbf2255b0db96cdd978c02b9b47fdf4",
+                    "value": "0"
+                },
+                "articulatedTrace": {
+                    "inputs": {
+                        "to": "0x24bd4fe977ed64a21a159404a7091ed9ca5a02ba",
+                        "value": "100000000"
+                    },
+                    "name": "transfer"
+                },
+                "blockHash": "0x6b3e8f1ff4c1a3797d2479007bc354d69c7962299bfe1804ad83a8a3c4c80865",
+                "blockNumber": 13013261,
+                "date": "2021-08-12 23:11:10 UTC",
+                "result": {
+                    "gasUsed": 30293,
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000001"
+                },
+                "subtraces": 0,
+                "timestamp": 1628809870,
+                "traceAddress": [],
+                "transactionHash": "0x98769d01cb0d206bb621422fae3aafa6ca46b2affa723e8c6f5e155135c06b3b",
+                "transactionIndex": 254,
+                "type": "call",
+                "stateDiff": {
+                    "0x48cbfa92fbbf2255b0db96cdd978c02b9b47fdf4": {
+                        "balance": "=",
+                        "code": "=",
+                        "nonce": "=",
+                        "storage": {
+                            "0x3ceafa51767006e648ec5f91e9d2de3cf2d687ff43c776aa287915944cb6db84": {
+                                "*": {
+                                    "from": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                    "to": "0x0000000000000000000000000000000000000000000000000000000005f5e100"
+                                }
+                            },
+                            "0xd549d8e8cd85e12fc77cd48f2be0597fea7c03d724ffa36802e4413a4cf6a3c8": {
+                                "*": {
+                                    "from": "0x0000000000000000000000000000000000000000000000000000002e90edd000",
+                                    "to": "0x0000000000000000000000000000000000000000000000000000002e8af7ef00"
+                                }
+                            }
+                        }
+                    },
+                    "0x5a0b54d5dc17e0aadc383d2db43b0a0d3e029c4c": {
+                        "balance": {
+                            "*": {
+                                "from": "0x1bcccaac58b02b489",
+                                "to": "0x1bcccf547435fccee"
+                            }
+                        },
+                        "code": "=",
+                        "nonce": "=",
+                        "storage": {}
+                    },
+                    "0x96e5490e437cc780753a4f8e335763b5083ac5d3": {
+                        "balance": {
+                            "*": {
+                                "from": "0x2386f26fc10000",
+                                "to": "0x1848301d104f3d"
+                            }
+                        },
+                        "code": "=",
+                        "nonce": {
+                            "*": {
+                                "from": "0x27",
+                                "to": "0x28"
+                            }
+                        },
+                        "storage": {}
+                    }
+                }
+            }
+        ]
+    ]
+}
