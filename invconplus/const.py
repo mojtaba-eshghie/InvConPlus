@@ -3,7 +3,7 @@ INVARIANT_STYLE = "VERISOL"
 # RESULT_DIR = "./ASE-result"
 
 # RESULT_DIR = "./Token-data/result-erc721"
-RESULT_DIR = "./SOK/result"
+RESULT_DIR = "./SOK/results"
 ENABLE_CACHE = True
 # ENABLE_CACHE = False
 

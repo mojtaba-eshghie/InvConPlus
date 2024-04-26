@@ -47,7 +47,7 @@ class BlockchainDataProvider(Provider):
             if len(result["transactions"]) >= self.maxCount:
                 return contractName, storageLayout, abi, constants, transactions[:self.maxCount]
             else:
-                txProvider = TransactionProvider(self.params, self.maxCount - cached_record_number, cached_record_number)
+                txProvider = TransactionProvider(self.params, self.maxCount - cached_record_number, cached_record_number, self.offset)
                 appended_transactions = txProvider.read()
 
                 result["cached_record_number"] = cached_record_number + len(appended_transactions)
@@ -104,6 +104,10 @@ class BlockchainDataProvider(Provider):
     # @input, read a contract blockchain address
     # @output, produce a dictionary consisting of source code (including abi, storage layout), transactions, state changes 
     def read(self, export_dir = "./tmp/"):
+        if(self.offset):
+            export_dir += "offset/"
+        else:
+            export_dir += "start/"    
         logging.debug(self.params[CONTRACT_ADDRESS])
         export_file = os.path.join(export_dir, self.params[CONTRACT_ADDRESS] +".json")
         return self._read(export_file=export_file)

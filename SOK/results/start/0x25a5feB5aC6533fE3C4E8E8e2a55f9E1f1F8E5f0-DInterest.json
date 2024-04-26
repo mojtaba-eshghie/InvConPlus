@@ -1,0 +1,442 @@
+{
+    "variables": [
+        {
+            "contractName": "DInterest",
+            "varName": "_notEntered",
+            "varType": "bool",
+            "varBytes": 1,
+            "varValue": true,
+            "varSlot": 0,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "_owner",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": "0x4027d912a19e3cd540fb580af6a9088eac738566",
+            "varSlot": 0,
+            "varOffset": 1
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "deposits",
+            "varType": "DInterest.Deposit[]",
+            "varBytes": 32,
+            "varValue": [
+                {
+                    "contractName": null,
+                    "varName": null,
+                    "varType": "DInterest.Deposit",
+                    "varBytes": 194,
+                    "varValue": [
+                        {
+                            "contractName": "DInterest",
+                            "varName": "amount",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 0,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "maturationTimestamp",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 1,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "interestOwed",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 2,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "initialMoneyMarketIncomeIndex",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 3,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "active",
+                            "varType": "bool",
+                            "varBytes": 1,
+                            "varValue": null,
+                            "varSlot": 4,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "finalSurplusIsNegative",
+                            "varType": "bool",
+                            "varBytes": 1,
+                            "varValue": null,
+                            "varSlot": 4,
+                            "varOffset": 1
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "finalSurplusAmount",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 5,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "mintMPHAmount",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 6,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": null,
+                    "varOffset": null
+                }
+            ],
+            "varSlot": 1,
+            "varOffset": 0,
+            "item_var_type": {
+                "contractName": null,
+                "varName": null,
+                "varType": "DInterest.Deposit",
+                "varBytes": 194,
+                "varValue": [
+                    {
+                        "contractName": "DInterest",
+                        "varName": "amount",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 0,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "maturationTimestamp",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 1,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "interestOwed",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 2,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "initialMoneyMarketIncomeIndex",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 3,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "active",
+                        "varType": "bool",
+                        "varBytes": 1,
+                        "varValue": null,
+                        "varSlot": 4,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "finalSurplusIsNegative",
+                        "varType": "bool",
+                        "varBytes": 1,
+                        "varValue": null,
+                        "varSlot": 4,
+                        "varOffset": 1
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "finalSurplusAmount",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 5,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "mintMPHAmount",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 6,
+                        "varOffset": 0
+                    }
+                ],
+                "varSlot": null,
+                "varOffset": null
+            }
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "latestFundedDepositID",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": 138,
+            "varSlot": 2,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "unfundedUserDepositAmount",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": 1530684941154615700000,
+            "varSlot": 3,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "fundingList",
+            "varType": "DInterest.Funding[]",
+            "varBytes": 32,
+            "varValue": [
+                {
+                    "contractName": null,
+                    "varName": null,
+                    "varType": "DInterest.Funding",
+                    "varBytes": 128,
+                    "varValue": [
+                        {
+                            "contractName": "DInterest",
+                            "varName": "fromDepositID",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 0,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "toDepositID",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 1,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "recordedFundedDepositAmount",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 2,
+                            "varOffset": 0
+                        },
+                        {
+                            "contractName": "DInterest",
+                            "varName": "recordedMoneyMarketIncomeIndex",
+                            "varType": "uint256",
+                            "varBytes": 32,
+                            "varValue": null,
+                            "varSlot": 3,
+                            "varOffset": 0
+                        }
+                    ],
+                    "varSlot": null,
+                    "varOffset": null
+                }
+            ],
+            "varSlot": 4,
+            "varOffset": 0,
+            "item_var_type": {
+                "contractName": null,
+                "varName": null,
+                "varType": "DInterest.Funding",
+                "varBytes": 128,
+                "varValue": [
+                    {
+                        "contractName": "DInterest",
+                        "varName": "fromDepositID",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 0,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "toDepositID",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 1,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "recordedFundedDepositAmount",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 2,
+                        "varOffset": 0
+                    },
+                    {
+                        "contractName": "DInterest",
+                        "varName": "recordedMoneyMarketIncomeIndex",
+                        "varType": "uint256",
+                        "varBytes": 32,
+                        "varValue": null,
+                        "varSlot": 3,
+                        "varOffset": 0
+                    }
+                ],
+                "varSlot": null,
+                "varOffset": null
+            }
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "MinDepositPeriod",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": 604800,
+            "varSlot": 5,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "MaxDepositPeriod",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": null,
+            "varSlot": 6,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "MinDepositAmount",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": 100000000000000000000,
+            "varSlot": 7,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "MaxDepositAmount",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": null,
+            "varSlot": 8,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "totalDeposit",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": 930806335051108597629678,
+            "varSlot": 9,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "totalInterestOwed",
+            "varType": "uint256",
+            "varBytes": 32,
+            "varValue": 56364490767335857425193,
+            "varSlot": 10,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "moneyMarket",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 11,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "stablecoin",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 12,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "feeModel",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": "0x87d700b0e5aaade6079faef1f6564405e7c0e612",
+            "varSlot": 13,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "interestModel",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 14,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "interestOracle",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 15,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "depositNFT",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 16,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "fundingNFT",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 17,
+            "varOffset": 0
+        },
+        {
+            "contractName": "DInterest",
+            "varName": "mphMinter",
+            "varType": "address",
+            "varBytes": 20,
+            "varValue": null,
+            "varSlot": 18,
+            "varOffset": 0
+        }
+    ]
+}

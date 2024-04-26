@@ -28,9 +28,11 @@ class InvConPlus:
     inv_file: Path 
     stateLayoutDecl: Declaration
     abi: ABISpec
+    
     contractDependency: Any 
     def __init__(self, address, contractName: ContractName, model_0: Declaration, abi: ABISpec) -> None:
         self.decl = model_0 
+        
         self.abi = abi
         self.all_ppts = list() 
         self.inv_file  = None

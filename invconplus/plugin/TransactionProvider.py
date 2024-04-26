@@ -20,7 +20,11 @@ class TransactionProvider(Provider):
         if self.params[CONTRACT_ADDRESS] == USDT_ADDRESS:
             result =  fetchTransactionsForUSDT(self.params[CONTRACT_ADDRESS], self.maxCount, self.cached_record_number)
         else:
-            result = fetchTransactionsForAccount(self.params[CONTRACT_ADDRESS], self.maxCount, self.cached_record_number)
+            if self.offset:
+                result = fetchTransactionsForAccount(self.params[CONTRACT_ADDRESS], self.maxCount, self.cached_record_number)
+            else:
+                result = fetchTransactionsForAccount(self.params[CONTRACT_ADDRESS], self.maxCount, self.cached_record_number)
+               
         return result
 
 if __name__ == "__main__":

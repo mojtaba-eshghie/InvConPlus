@@ -1,4 +1,5 @@
 import copy
+import sys
 import traceback
 from typing import Dict, List, Tuple, Set, NewType, Any
 from invconplus.model.model import VarInfo, VarType
@@ -81,6 +82,9 @@ class FuncDataDependency:
             if curVarInfo.derivation is not None:               
                 derivation_infos = []
                 for i in range(len(curVarInfo.derivation.varInfos)):
+                    if(curVarInfo.derivation.varInfos[i] is dict):
+                        print(curVarInfo.derivation.varInfos[i], "at index", i)
+                        sys.exit()
                     if curVarInfo.derivation.varInfos[i] == varInfo:
                         # new_curVarInfo.derivation.varInfos[i] = newVarInfo
                         derivation_infos.append(newVarInfo)

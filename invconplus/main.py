@@ -21,6 +21,7 @@ def main(address, configuration=None, maxCount=1, minSupport=1, offset = False):
     read_start_time = time.time()
     tx = txreplayer.readPerTx()
     statistics["readTx"].append(time.time() - read_start_time)
+
     if not os.path.exists(RESULT_DIR):
         os.mkdir(RESULT_DIR)
 
@@ -66,15 +67,32 @@ def main(address, configuration=None, maxCount=1, minSupport=1, offset = False):
                         ppt.loadSliceEvent(tx=tx, slice_states= pre_slice_states + post_slice_states)
             count += 1
         
-        invcon.generate_trace_slice_invariants(inv_file = os.path.join(RESULT_DIR, address+"-"+ txreplayer.contractName+"-trace.inv"))
-        json.dump(slicer.to_list(), open(os.path.join(RESULT_DIR, address + "-" + txreplayer.contractName + "-" + "trace_slices.json"), "w"), indent=4)
+
+        if offset:
+            invcon.generate_trace_slice_invariants(inv_file = os.path.join((RESULT_DIR +"/offset/"), address+"-"+ txreplayer.contractName+"-trace.inv"))
+            json.dump(slicer.to_list(), open(os.path.join((RESULT_DIR+ "/offset/"), address + "-" + txreplayer.contractName + "-" + "trace_slices.json"), "w"), indent=4)
+        else:
+            invcon.generate_trace_slice_invariants(inv_file = os.path.join((RESULT_DIR+ "/start/"), address+"-"+ txreplayer.contractName+"-trace.inv"))
+            json.dump(slicer.to_list(), open(os.path.join((RESULT_DIR+ "/start"), address + "-" + txreplayer.contractName + "-" + "trace_slices.json"), "w"), indent=4)
+
+    
     
     if count > minSupport:
         logging.warning("Generating invariants... for {0} txs".format(count))
         logging.warning("Time used: {0} seconds".format(str(time.time() - start_time)))
-        logging.warning("Time Usage Detail: initializePpts({0}), readTx({1}), processData({2})".format( statistics["initializePpts"], sum(statistics["readTx"]), sum(statistics["processData"])))
-        invcon.generate_invariants(inv_file= os.path.join(RESULT_DIR, address + "-" +txreplayer.contractName+".inv"))
-        txreplayer.toStateJson(os.path.join(RESULT_DIR, address + "-" +txreplayer.contractName+".json"))
+
+        if offset:
+            logging.warning("Time Usage Detail: initializePpts({0}), readTx({1}), processData({2})".format( statistics["initializePpts"], sum(statistics["readTx"]), sum(statistics["processData"])))
+            invcon.generate_invariants(inv_file= os.path.join(RESULT_DIR +"/offset/", address + "-" +txreplayer.contractName+".inv"))
+            txreplayer.toStateJson(os.path.join(RESULT_DIR +"/offset/", address + "-" +txreplayer.contractName+".json"))
+        else:
+            logging.warning("Time Usage Detail: initializePpts({0}), readTx({1}), processData({2})".format( statistics["initializePpts"], sum(statistics["readTx"]), sum(statistics["processData"])))
+            invcon.generate_invariants(inv_file= os.path.join(RESULT_DIR+ "/start/", address + "-" +txreplayer.contractName+".inv"))
+            txreplayer.toStateJson(os.path.join(RESULT_DIR+ "/start/", address + "-" +txreplayer.contractName+".json"))
+
+    
+    
+       
 
 GameChannel_Address = "0x7e0178e1720e8b3a52086a23187947f35b6f3fc4"
 Token_Address = "0x1dac5649e2a0c943ffc4211d708f6ddde4742fd6"
@@ -101,7 +119,7 @@ if __name__ == "__main__":
                         help='the number of minimum transactions used,\
                               (default, 50)') 
     
-    parser.add_argument('--offset', type=int, required=False, default=False, 
+    parser.add_argument('--offset', type=bool, required=False, default=False, 
                         help='This sets if an offset should be calculated to capture the last transaction,\
                               (default, False)') 
     
